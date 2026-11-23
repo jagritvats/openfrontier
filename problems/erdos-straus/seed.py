@@ -24,8 +24,6 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--fresh", action="store_true", help="delete the db first")
     ap.add_argument("--db", default=str(ROOT / "frontier.db"))
-    ap.add_argument("--limit", type=int, default=None,
-                    help="unused placeholder for parity with certificates")
     args = ap.parse_args()
 
     db = Path(args.db)
@@ -45,13 +43,13 @@ def main() -> None:
                             goal="Small cases, parametric families, and cheap counterexample hunts."), ts=ts())
 
     cli.cmd_state_lemma(ns(problem="erdos-straus", id="L-001",
-                           title="Every n ≤ 1,000 admits a solution",
+                           title="Every n ≤ 10,000 admits a solution",
                            program="P1", aim="for_yes"), ts=ts())
     cli.cmd_state_lemma(ns(problem="erdos-straus", id="L-002",
                            title="The full conjecture: every n ≥ 2 admits a solution",
                            program="P1", aim="for_yes"), ts=ts())
     cli.cmd_state_lemma(ns(problem="erdos-straus", id="L-003",
-                           title="A solution with a = b = c exists for every n",
+                           title="A solution with two equal denominators (b = c) exists for every n",
                            program="P1", aim="for_yes"), ts=ts())
     cli.cmd_state_lemma(ns(problem="erdos-straus", id="L-004",
                            title="The family n ≡ 3 (mod 4) is solvable, explicitly",
@@ -65,7 +63,7 @@ def main() -> None:
                       artifact=str(ART / "cert_bound.py"), oracle="certificate_rerun"), ts=ts())
     cli.cmd_milestone(ns(problem="erdos-straus",
                          text="First verified bound on the platform: 4/n solvable for all "
-                              "n ≤ 1,000, re-runnable by anyone."), ts=ts())
+                              "n ≤ 10,000, re-runnable by anyone."), ts=ts())
 
     cli.cmd_claim(ns(problem="erdos-straus", lemma="L-004", seat="algebra-01", ttl_h=24), ts=ts())
     cli.cmd_submit(ns(problem="erdos-straus", lemma="L-004", seat="algebra-01",
@@ -73,10 +71,9 @@ def main() -> None:
 
     cli.cmd_claim(ns(problem="erdos-straus", lemma="L-003", seat="skeptic-01", ttl_h=24), ts=ts())
     cli.cmd_submit(ns(problem="erdos-straus", lemma="L-003", seat="skeptic-01",
-                      artifact=str(ART / "refute_equal_denom.py"), oracle="certificate_rerun"), ts=ts())
+                      artifact=str(ART / "refute_b_equals_c.py"), oracle="certificate_rerun"), ts=ts())
     cli.cmd_rule_dead(ns(problem="erdos-straus", lemma="L-003",
-                         reason="Refuted by certificate at n = 2 (equal denominators would need "
-                                "a = 3/2). Refutations count; filed with thanks."), ts=ts())
+                         reason="Refuted by certificate at n = 5. Refutations count."), ts=ts())
 
     # The live edge of the map: a seat at work, nothing submitted yet.
     # Long ttl so the sample record keeps showing the seat at work.

@@ -42,9 +42,9 @@ def test_garbage_output_maps_to_build_error(tmp_path):
 
 
 def test_real_refutation_certificate():
-    v = CertificateRerun().verify(ART / "refute_equal_denom.py")
+    v = CertificateRerun().verify(ART / "refute_b_equals_c.py")
     assert v.status == "refuted"
-    assert v.details["counterexample"]["n"] == 2
+    assert v.details["counterexample"] == {"n": 5, "claim": "b = c"}
 
 
 def test_real_mod4_certificate():
@@ -56,7 +56,7 @@ def test_real_mod4_certificate():
 def test_real_bound_certificate():
     v = CertificateRerun().verify(ART / "cert_bound.py")
     assert v.status == "checked"
-    assert v.details["bound"] == 1000
+    assert v.details["bound"] == 10_000
 
 
 def test_unknown_oracle_rejected():

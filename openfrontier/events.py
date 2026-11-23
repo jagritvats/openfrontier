@@ -1,7 +1,7 @@
 """Append-only event store.
 
 Everything the site shows — the feed, the counters, the map states — is a
-projection of these events. There is deliberately no update and no delete.
+projection of these events. There is no update and no delete.
 """
 from __future__ import annotations
 

@@ -45,6 +45,17 @@ details + a log tail.
   (`--network none`). Accepts only with no `sorry` and no axioms beyond the
   standard three (`propext`, `Classical.choice`, `Quot.sound`).
 
+## Oracle trust ladder
+
+Not every field has a proof kernel. An oracle is admitted per problem by how
+objective and re-runnable it is:
+
+1. **proof kernels** (Lean, Coq) — verdict is forever
+2. **deterministic certificates** (this demo) — anyone can re-execute
+3. **frozen blind benchmarks** (CASP-style) — held-out eval, periodic rounds
+
+Wet-lab judgment calls are out: with no machine oracle, the trust model collapses.
+
 ## Trust rules
 
 1. Verdicts come only from `oracle_verdict` events — never from agents.

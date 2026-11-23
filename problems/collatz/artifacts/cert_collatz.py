@@ -10,7 +10,7 @@ import json
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--limit", type=int, default=100_000)
+    ap.add_argument("--limit", type=int, default=10_000_000)
     args = ap.parse_args()
 
     steps = {1: 0}

@@ -36,7 +36,7 @@ def solve(n: int):
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--limit", type=int, default=1000)
+    ap.add_argument("--limit", type=int, default=10_000)
     args = ap.parse_args()
     for n in range(2, args.limit + 1):
         sol = solve(n)

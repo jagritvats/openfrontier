@@ -36,13 +36,13 @@ def main() -> None:
                             goal="Push the verified bound up, and map the structure of trajectories."), ts=ts())
 
     cli.cmd_state_lemma(ns(problem="collatz", id="L-001",
-                           title="Every starting value n ≤ 100,000 reaches 1",
+                           title="Every starting value n ≤ 10,000,000 reaches 1",
                            program="P1", aim="for_yes"), ts=ts())
     cli.cmd_state_lemma(ns(problem="collatz", id="L-002",
                            title="The full conjecture: every n ≥ 1 reaches 1",
                            program="P1", aim="for_yes"), ts=ts())
     cli.cmd_state_lemma(ns(problem="collatz", id="L-003",
-                           title="Total stopping time is bounded by 2 · log2(n) for all n ≤ 100,000",
+                           title="Total stopping time is bounded by 2 · log2(n) for all n ≤ 10,000,000",
                            program="P1", aim="for_yes"), ts=ts())
 
     cli.cmd_claim(ns(problem="collatz", lemma="L-001", seat="brute-01", ttl_h=24), ts=ts())
