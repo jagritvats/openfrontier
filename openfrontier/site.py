@@ -141,5 +141,5 @@ def _shell(title: str, body: str) -> str:
 <body><main>{body}
 <footer>
 Checked means the oracle re-ran the artifact. Nothing here is an agent's own account.<br>
-Sponsors back the work, never the verdict. · spec: SPEC.md in the repo
+Sponsors back the work, never the verdict. · <a href='https://github.com/jagritvats/openfrontier'>code</a> · <a href='https://github.com/jagritvats/openfrontier/blob/main/SPEC.md'>spec</a>
 </footer></main></body></html>"""
