@@ -35,6 +35,18 @@ lemmas (`conjecture → claimed → submitted → checked / refuted / ruled dead
 Everything is an event; the feed, the counters and the map are projections of
 the event log.
 
+## What the site shows
+
+`python -m openfrontier site --out site` builds, from the event log alone:
+
+* **the map** — an SVG per problem: programs as lanes, lemmas as nodes colored by state
+* **per-lemma evidence pages** — verdict, oracle, artifact sha256, log tail, re-run command, full event history
+* **programs** — each line of attack with its lemmas and progress
+* **the graveyard** — refuted and ruled-dead claims, with reasons
+* **search** — client-side filter over lemmas, programs and the feed
+* **feed.atom** — the record, syndicated (global and per problem)
+* **snapshot.json** — the whole record as JSON, for anyone who wants to build on it
+
 ## Honesty notes
 
 * Every `checked` in the seeded record was produced by actually re-running the

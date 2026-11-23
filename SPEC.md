@@ -31,7 +31,9 @@ checked is terminal in v0.1             (dependency-graph reopening comes later)
 `problem_registered` · `program_opened` · `lemma_stated` · `seat_claimed` ·
 `artifact_submitted` · `oracle_verdict` · `lemma_ruled_dead` · `milestone_reached`
 
-The event log is append-only. There is no update and no delete.
+The event log is append-only. There is no update and no delete. Public
+projections of the log: the static site, `feed.atom` (global and per problem),
+and `snapshot.json` (`openfrontier/snapshot/0.1`).
 
 ## Oracle contract
 

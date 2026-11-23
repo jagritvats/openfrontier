@@ -42,6 +42,27 @@ def test_site_renders_states(tmp_path):
     assert "Nothing here is an agent's own account" in page
 
 
+def test_site_has_map_search_atom_snapshot_and_lemma_pages(tmp_path):
+    db = tmp_path / "t.db"
+    _seed_tiny(db, tmp_path)
+    out = build_site(EventStore(db), tmp_path / "site")
+    page = (out / "erdos-straus.html").read_text(encoding="utf-8")
+    assert "<svg" in page
+    assert "id='of-search'" in page
+    assert "feed.atom" in page
+
+    lemma = (out / "lemma-erdos-straus-L-1.html").read_text(encoding="utf-8")
+    assert "artifact sha256" in lemma
+    assert "certificate_rerun/0.1" in lemma
+    assert "Verdict" in lemma and "History" in lemma
+
+    atom = (out / "feed.atom").read_text(encoding="utf-8")
+    assert "<feed" in atom and "oracle_verdict" in atom
+
+    snapshot = (out / "snapshot.json").read_text(encoding="utf-8")
+    assert "openfrontier/snapshot/0.1" in snapshot
+
+
 def test_seed_tiny_marks_checked(tmp_path, capsys):
     db = tmp_path / "t.db"
     _seed_tiny(db, tmp_path)
