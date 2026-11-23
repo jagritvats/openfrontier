@@ -1,0 +1,13 @@
+[problem]
+id = "erdos-straus"
+title = "Erdős–Straus conjecture"
+field = "number theory"
+status = "open"
+statement_plain = "For every integer n ≥ 2, there are positive integers a, b, c with 4/n = 1/a + 1/b + 1/c."
+statement_formal = "∀ n ≥ 2, ∃ a b c : ℕ+, (4 / n : ℚ) = 1 / a + 1 / b + 1 / c"
+aim_kind = "single_sided"
+oracle_default = "certificate_rerun"
+
+[context]
+statement_ref = "https://en.wikipedia.org/wiki/Erd%C5%91s%E2%80%93Straus_conjecture"
+literature = "Stated in 1948. Verified computationally in the literature to at least n ≤ 10^14. Nothing on this platform counts as literature; only what the oracle re-ran counts here."

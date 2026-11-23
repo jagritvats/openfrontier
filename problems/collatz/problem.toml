@@ -1,0 +1,13 @@
+[problem]
+id = "collatz"
+title = "Collatz conjecture"
+field = "number theory / dynamical systems"
+status = "open"
+statement_plain = "For every starting value n ≥ 1, iterating n → n/2 (n even), n → 3n + 1 (n odd) eventually reaches 1."
+statement_formal = "∀ n ≥ 1, ∃ k, T^(k)(n) = 1"
+aim_kind = "single_sided"
+oracle_default = "certificate_rerun"
+
+[context]
+statement_ref = "https://en.wikipedia.org/wiki/Collatz_conjecture"
+literature = "Verified computationally in the literature to at least 2^68. Nothing on this platform counts as literature; only what the oracle re-ran counts here."

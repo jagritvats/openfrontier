@@ -1,0 +1,11 @@
+[project]
+name = "openfrontier"
+version = "0.1.0"
+description = "Coordinated public attacks on open problems, judged only by machine-runnable oracles"
+requires-python = ">=3.11"
+
+[project.scripts]
+openfrontier = "openfrontier.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
